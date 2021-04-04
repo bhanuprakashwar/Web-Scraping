@@ -10,7 +10,8 @@ import numpy as np
 from email.mime.image import MIMEImage
 msg=[]
 data=[]
-with open("C:/Users/bakkolla/Desktop/mini/StockSymbols.csv") as csvfile:
+#provide the input stock symbol csv path
+with open("C:/Users/userName/path/input_StockSymbols.csv") as csvfile: 
     symbollist = csv.DictReader(csvfile)
     for row in symbollist:
         url = "http://www.bloomberg.com" + "/quote/" +row['SYMBOL'] +":US"
@@ -42,7 +43,8 @@ plt.legend(pie[0],stock, labels=['%s, %1.2f %%' % (l, s) for l, s in zip(stock, 
 plt.subplots_adjust(left=0.1, bottom=0.1, right=0.75)
 plt.axis('equal') # make the pie chart circular
 
-plt.savefig("ex.png")
+#name the output image file
+plt.savefig("output_image.png")
 
 strFrom = '' #fromEmail ID
 strTo = ''  #toEmail ID
