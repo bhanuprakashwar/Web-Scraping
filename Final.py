@@ -44,9 +44,8 @@ plt.axis('equal') # make the pie chart circular
 
 plt.savefig("ex.png")
 
-strFrom = 'godofwar123bhanu@gmail.com'
-strTo = 'anirudh.boddu97@gmail.com'
-
+strFrom = '' #fromEmail ID
+strTo = ''  #toEmail ID
 
 msgRoot = MIMEMultipart('Example')
 msgRoot['Subject'] = 'Daily Stock Digest'
@@ -78,7 +77,7 @@ import smtplib
 smtp = smtplib.SMTP()
 smtp.connect('smtp.gmail.com')
 smtp.starttls()
-smtp.login('godofwar123bhanu@gmail.com', 'bhanua153ds')
+smtp.login('', '') #fromEmailID, Password
 smtp.sendmail(strFrom, strTo, msgRoot.as_string())
 smtp.quit()
 
